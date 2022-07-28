@@ -1,0 +1,9 @@
+use demo;
+create table Product(id bigint primary key,sku varchar(255),name varchar(255),description varchar(255),unitprice float,imageurl blob,unitsinstock int,datecreated datetime,lastupdated datetime,categoryid bigint, foreign key(categoryid) references Productcategory(categoryid));
+drop table Product;
+insert into Product values(1,"StyleCode","LineGown","Party & Fashion Wear",699,"https://www.google.com/url?q=http://www.flipkart.com/new-fashion-flared-a-line-gown/p/itm0bfaddc8f9464%3Fpid%3DGWNG4SEYSRVHAQKK%26lid%3DLSTGWNG4SEYSRVHAQKKK8LI3R%26marketplace%3DFLIPKART%26cmpid%3Dcontent_gown_8965229628_gmc&sa=U&ved=0ahUKEwjD4ce2y5r5AhW3R2wGHavvCkEQrzwIHA&usg=AOvVaw0K_9L7oIws-NfbUO5sK6Iv",340,'2000-04-05 20:00:25','2004-06-17 14:20:33',459),(1,"Grey micro Cotton/ Gerogette Gown","Pushpa Boutiques","Royal Anarkali",1949," https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQtliuJxEqkWaWcp7RpuRJbNf-akUYEhNS2zDi1K04bUX3O_7tcHtRBiSrQi0LuXpayLIKTctk_x-WuaRogP7qtjBKdEWEEUI5_1RDVkJkq&usqp=CAE",840,'2003-06-09 07:20:20','2004-07-20 17:41:00',694);
+select * from Product;
+
+create table Productcategory(categoryid bigint primary key,categoryname varchar(255));
+insert into Productcategory values(459,"Dress"),(694,"Dress");
+select * from Productcategory;
